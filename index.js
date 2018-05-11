@@ -18,7 +18,8 @@ function watchSubmit() {
       success: function(data){
         console.log(data);
         let petResults= data.petfinder.pets.pet.map(function (pet){
-          return `<h1>${pet.name.$t}</h1>`
+          // let photoId = data.petfinder.pets.pet.media.photos
+          return `<h1>${pet.name.$t}</h1><p>Type of Animal: ${pet.animal.$t}</p><p>Age: ${pet.age.$t}</p><p>Sex: ${pet.sex.$t}</p>`
         })
         $("#results").html(petResults);
       },
@@ -32,15 +33,19 @@ function watchSubmit() {
 
   });
 }
-  function getDataFromApi(searchTerm, callback) {
-  // const settings = {
-  //   url: petFinderApi,
-  //  
-  //   dataType: 'json',
-  //   type: 'GET',
-  //   success: callback
-};
+
+// function imagePage(){
+//   $('#')
+}
+// function getDataFromApi(searchTerm, callback) {
+//   // const settings = {
+//   //   url: petFinderApi,
+//   //  
+//   //   dataType: 'json',
+//   //   type: 'GET',
+//   //   success: callback
+// };
 
   // $.ajax(settings);
 
-watchSubmit();
+  watchSubmit();
