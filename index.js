@@ -1,7 +1,7 @@
 let petFinderApi = "https://api.petfinder.com/pet.find"
 
 function watchSubmit() {
-  $('#form').submit(event => {
+  $('#zipcode-form').submit(event => {
     event.preventDefault();
     let zipcode = $('#zipcode').val();
     // petFinderApi+="&location="+zipcodeSubmit;
@@ -36,7 +36,7 @@ function watchSubmit() {
 
 // function imagePage(){
 //   $('#')
-}
+// }
 // function getDataFromApi(searchTerm, callback) {
 //   // const settings = {
 //   //   url: petFinderApi,
