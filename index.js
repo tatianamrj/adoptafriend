@@ -17,9 +17,15 @@ function watchSubmit() {
       },
       success: function(data){
         console.log(data);
+        let petId = data.petfinder.pets.pet.id;
+        let petImage= null;
         let petResults= data.petfinder.pets.pet.map(function (pet){
-          let petImage = data.petfinder.pets.pet.media.photos;
-          return `<h1>${pet.name.$t}</h1><p>Type of Animal: ${pet.animal.$t}</p><p>Age: ${pet.age.$t}</p><p>Sex: ${pet.sex.$t}</p><img src="http://photos.petfinder.com/photos/pets/${petImage}">`
+           if (pet.media===undefined){
+              petImage = "https://d30y9cdsu7xlg0.cloudfront.net/png/1515817-200.png"
+            } else {
+              petImage = pet.media.photos.photo["0"].$t;
+            }
+          return `<h1>${pet.name.$t}</h1><p>Type of Animal: ${pet.animal.$t}</p><p>Age: ${pet.age.$t}</p><p>Sex: ${pet.sex.$t}</p><img src="${petImage}">`
         })
         $("#results").html(petResults);
       },
