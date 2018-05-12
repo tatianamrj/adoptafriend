@@ -18,8 +18,8 @@ function watchSubmit() {
       success: function(data){
         console.log(data);
         let petResults= data.petfinder.pets.pet.map(function (pet){
-          // let photoId = data.petfinder.pets.pet.media.photos
-          return `<h1>${pet.name.$t}</h1><p>Type of Animal: ${pet.animal.$t}</p><p>Age: ${pet.age.$t}</p><p>Sex: ${pet.sex.$t}</p>`
+          let petImage = data.petfinder.pets.pet.media.photos;
+          return `<h1>${pet.name.$t}</h1><p>Type of Animal: ${pet.animal.$t}</p><p>Age: ${pet.age.$t}</p><p>Sex: ${pet.sex.$t}</p><img src="http://photos.petfinder.com/photos/pets/${petImage}">`
         })
         $("#results").html(petResults);
       },
