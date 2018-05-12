@@ -1,5 +1,5 @@
 let petFinderApi = "https://api.petfinder.com/pet.find"
-
+// when user submit zipcode information
 function watchSubmit() {
   $('#zipcode-form').submit(event => {
     event.preventDefault();
@@ -17,7 +17,6 @@ function watchSubmit() {
       },
       success: function(data){
         console.log(data);
-        let petId = data.petfinder.pets.pet.id;
         let petImage= null;
         let petResults= data.petfinder.pets.pet.map(function (pet){
            if (pet.media===undefined){
@@ -25,7 +24,9 @@ function watchSubmit() {
             } else {
               petImage = pet.media.photos.photo["0"].$t;
             }
-          return `<h1>${pet.name.$t}</h1><p>Type of Animal: ${pet.animal.$t}</p><p>Age: ${pet.age.$t}</p><p>Sex: ${pet.sex.$t}</p><img src="${petImage}">`
+        // let petId = pets.pet.id.$t;
+        // let petUrl = `https://www.petfinder.com/${petId}`
+          return `<h1 id="#pet-name">${pet.name.$t}</h1><p>Type of Animal: ${pet.animal.$t}</p><p>Age: ${pet.age.$t}</p><p>Sex: ${pet.sex.$t}</p><img src="${petImage}">`
         })
         $("#results").html(petResults);
       },
@@ -40,6 +41,11 @@ function watchSubmit() {
   });
 }
 
+function imageClick() {
+    $('#pet-name').onClick(event => {
+    event.preventDefault();
+    return petImage;
+})
 // function imagePage(){
 //   $('#')
 // }
@@ -53,5 +59,5 @@ function watchSubmit() {
 // };
 
   // $.ajax(settings);
-
+}
   watchSubmit();
