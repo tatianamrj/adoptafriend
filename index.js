@@ -86,7 +86,7 @@ function imageClick() {
     $("#single-pet-page").show();
     $(".pet-info").html(event.currentTarget.children);
     $(".pet-description").toggle("hidden");
-    $(".pet-info").append("<a href='index.html'>Restart Search</a>")
+    $(".pet-info").append("<button><a href='index.html'>Restart Search</a></button>")
   });
 
 }
