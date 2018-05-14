@@ -48,22 +48,27 @@ function showResults(pets) {
     return `
     <div class="pet">
       <h1 class="pet-name">${pet.name.$t}</h1>
-      <p>Type of Animal: ${pet.animal.$t}</p>
-      <p>Age: ${pet.age.$t}</p>
-      <p>Sex: ${pet.sex.$t}</p>
-      <img src="${petImage}">
+      <p class="animal-type">Type of Animal: ${pet.animal.$t}</p>
+      <p class="animal-name">Age: ${pet.age.$t}</p>
+      <p class="animal-sex">Sex: ${pet.sex.$t}</p>
+      <p class="pet-description hidden">
+      Description: ${pet.description.$t}</p>
+      <img src="${petImage}" class="animal-image">
     </div>`;
   });
   console.log(petResults);
+  
   $("#results").html(petResults);
 }
 
 function imageClick() {
   $("#results-page").on('click', '.pet', event => {
+    console.log(event.currentTarget.children);
     event.preventDefault();
     $("#results-page").hide();
     $("#single-pet-page").show();
-    $(".breed").html("Pitbull")
+    $(".pet-info").html(event.currentTarget.children);
+    $(".pet-description").toggle("hidden");
     //return $("#large-image").html(petImage);
   });
   // function restart(){
