@@ -22,10 +22,36 @@
         <input type="number" id="zipcode" placeholder="ZipCode">
 
         <label for="pet-type"></label>
-        <input type="number" id="pet-type" placeholder="Pet Type">
+        <select id="pet-type" >
+          <option value="">
+            Select Animal
+          </option>
+           <option value="barnyard">
+             Barnyard Animal
+           </option>
+           <option value="bird">
+             Bird
+           </option>
+           <option value="cat">
+             Cat
+           </option>
+           <option value="dog">
+             Dog
+           </option>
+           <option value="horse">
+             Horse
+           </option>
+           <option value="Reptile">
+             Reptile
+           </option>
+           <option value="smallfurry">
+             Small and Furry
+           </option>
+        </select>
 
-        <label for="breed"></label>
-        <input type="number" id="breed" placeholder="Breed">
+        <label for="sex"></label>
+        <input type="radio" name="sex" value="M">Male
+        <input type="radio" name="sex" value="F">Female
         <input type="submit" value="submit">
       </form>
       <p> some content that describes your project. </p>

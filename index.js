@@ -4,11 +4,8 @@ function watchSubmit() {
   $("#pet-form").submit(event => {
     event.preventDefault();
     let zipcode = $("#zipcode").val();
-    let petType = $("pet-type").val();
-    let breed = $("breed").val();
-
-    // TODO GET PET Type
-    // TODO BREED
+    let petType = $("#pet-type").val();
+    let sex = $("input[name=sex]:checked").val();
 
     $.ajax({
       dataType: "jsonp",
@@ -17,12 +14,12 @@ function watchSubmit() {
       data: {
         key: "d709360a7a61accf370002fcfd477c15",
         location: zipcode,
-        type: animal,
-        breed: breed
-        // TODO: BREED + TYPE
+        animal: petType,
+        sex: sex,
         format: "json"
       },
       success: function(data) {
+        console.log(data);
         showResults(data.petfinder.pets.pet);
       },
       error: function(error) {
@@ -40,7 +37,7 @@ function showResults(pets) {
 
   let petResults = pets.map(function(pet) {
     let petImage = null;
-    if (pet.media) {
+    if (pet.media.photos) {
       petImage = pet.media.photos.photo["0"].$t;
     } else {
       petImage = "https://d30y9cdsu7xlg0.cloudfront.net/png/1515817-200.png";
