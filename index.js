@@ -57,10 +57,10 @@ function showResults(pets) {
 }
 
 function imageClick() {
-  $(".pet-name").click(event => {
+  $("#results-page").on('click', '.pet', event => {
     event.preventDefault();
-
-    alert("pet clicked, show pet page, hide results");
+    $("#results-page").hide();
+    $("#single-pet-page").show();
     //return $("#large-image").html(petImage);
   });
   // function restart(){
