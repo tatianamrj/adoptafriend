@@ -1,5 +1,13 @@
 let petFinderApi = "https://api.petfinder.com/pet.find";
 // when user submit zipcode information
+
+function loadSearch() {
+const homePage = `<div id="home-page"><title>Home</title><form id="pet-form"><label for="zipcode"></label><input type="number" id="zipcode" placeholder="ZipCode"><label for="pet-type"></label><select id="pet-type"><option value="">Select Animal</option><option value="barnyard">Barnyard Animal</option><option value="bird">Bird</option><option value="cat">Cat</option><option value="dog">Dog</option><option value="horse">Horse</option><option value="Reptile">Reptile</option><option value="smallfurry">Small and Furry</option></select><label for="sex"></label><input type="radio" name="sex" value="M">Male<input type="radio" name="sex" value="F">Female<input type="submit" value="submit"></form><p> some content that describes your project. </p> </div><div id="results-page" class="hidden"><section> <h2>Results</h2></section><div id="results"></div> </div><div id="single-pet-page" class="hidden"><p class="pet-info"> Husky, Age: 12</p><div id="large-image"></div><div id="map"></div></div><footer id="restart">About me...</footer>`;
+$("main").html(homePage);
+}
+
+loadSearch();
+
 function watchSubmit() {
   $("#pet-form").submit(event => {
     event.preventDefault();
@@ -69,14 +77,9 @@ function imageClick() {
     $("#single-pet-page").show();
     $(".pet-info").html(event.currentTarget.children);
     $(".pet-description").toggle("hidden");
-    //return $("#large-image").html(petImage);
+    $(".pet-info").append("<a href='index.html'>Restart Search</a>")
   });
-  // function restart(){
-  //   $("#restart").click(event =>){
-  //     event.preventDefault();
-  //     $('#zipcode-form').empty();
-  //   }
-  // }
+
 }
 watchSubmit();
 imageClick();
