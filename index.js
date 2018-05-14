@@ -4,6 +4,9 @@ function watchSubmit() {
   $("#pet-form").submit(event => {
     event.preventDefault();
     let zipcode = $("#zipcode").val();
+    let petType = $("pet-type").val();
+    let breed = $("breed").val();
+
     // TODO GET PET Type
     // TODO BREED
 
@@ -14,6 +17,8 @@ function watchSubmit() {
       data: {
         key: "d709360a7a61accf370002fcfd477c15",
         location: zipcode,
+        type: animal,
+        breed: breed
         // TODO: BREED + TYPE
         format: "json"
       },
@@ -61,6 +66,7 @@ function imageClick() {
     event.preventDefault();
     $("#results-page").hide();
     $("#single-pet-page").show();
+    $(".breed").html("Pitbull")
     //return $("#large-image").html(petImage);
   });
   // function restart(){
