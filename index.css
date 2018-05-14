@@ -1,0 +1,20 @@
+.hidden {
+  display: none;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: gray;
+  padding: 10px;
+}
+
+main {
+  margin-top: 60px;
+}
+
+.pet {
+  border: 1px solid gray;
+}
