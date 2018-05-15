@@ -2,10 +2,14 @@
 
 let petFinderApi = "https://api.petfinder.com/pet.find";
 
+// Google Maps API where locations are gathered into
+
+// let googleMapApi = "https://maps.googleapis.com/maps/api/js"
+
 // Load search function
 
 function loadSearch() {
-const homePage = `<div id="home-page"><title>Home</title><form id="pet-form"><label for="zipcode"></label><input id="zipcode" placeholder="ZipCode"><label for="pet-type"></label><select id="pet-type"><option value="">Select Animal</option><option value="barnyard">Barnyard Animal</option><option value="bird">Bird</option><option value="cat">Cat</option><option value="dog">Dog</option><option value="horse">Horse</option><option value="Reptile">Reptile</option><option value="smallfurry">Small and Furry</option></select><label for="sex"></label><input type="radio" name="sex" value="M">Male<input type="radio" name="sex" value="F">Female<input type="submit" value="submit"></form><p> some content that describes your project. </p> </div><div id="results-page" class="hidden"><section> <h2>Results</h2></section><div id="results"></div> </div><div id="single-pet-page" class="hidden"><p class="pet-info"> Husky, Age: 12</p><div id="large-image"></div><div id="map"></div></div><footer id="restart">About me...</footer>`;
+const homePage = `<div id="home-page"><title>Home</title><form id="pet-form"><label for="zipcode"></label><input id="zipcode" placeholder="ZipCode"><label for="pet-type"></label><select id="pet-type"><option value="">Select Animal</option><option value="barnyard">Barnyard Animal</option><option value="bird">Bird</option><option value="cat">Cat</option><option value="dog">Dog</option><option value="horse">Horse</option><option value="Reptile">Reptile</option><option value="smallfurry">Small and Furry</option></select><label for="sex"></label><input type="radio" name="sex" value="M">Male<input type="radio" name="sex" value="F">Female<input type="submit" value="submit"></form><p> Adopt a Friend is an app to help you find adoptable pets near your location. </p> </div><div id="results-page" class="hidden"><section> <h2>Results</h2></section><div id="results"></div> </div><div id="single-pet-page" class="hidden"><p class="pet-info"> Husky, Age: 12</p><div id="large-image"></div><div id="map"></div></div><footer id="restart">About me: My name is Tatiana M.R. Johnson and I am a student in Thinkful's Full Stack Web Development program. <p>I am new to programming, but I love storytelling and I am excited to learn how I can use programming to tell compelling stories.</p></footer>`;
 $("main").html(homePage);
 }
 
@@ -44,6 +48,22 @@ function watchSubmit() {
     $("#zipcode").val("");
   });
 }
+
+// function renderMap(){
+//   $.ajax({
+//     dataType: "jsonp",
+//     url: googleMapApi,
+//     type: "get",
+//     data:{
+//       key: "AIzaSyAiv1XZ04K1PfWYP_YBL07cYVHdy1mW53M",
+//       q:
+//       origin: 
+//       format: "json"
+//     }
+//   })
+// }
+
+
 
 // petresults page loads
 function showResults(pets) {
