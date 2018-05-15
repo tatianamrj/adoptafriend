@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .hidden {
   display: none;
 }
@@ -7,14 +11,94 @@
   top: 0;
   right: 0;
   left: 0;
-  background-color: gray;
+  color:#56CCF2;
+  background-color: white;
   padding: 10px;
+  text-align:center;
 }
 
+.logo {
+	width:4%;
+	height: 4%;
+}
+
+body {
+  font-family: Raleway , sans-serif;
+  margin: auto;
+  background: #56CCF2;
+  color: #FFFFFF;
+}
+
+#home-page {
+	display: block;
+	text-align: center;
+	margin: auto;
+	width: 315px;
+	height: 34px;
+	left: 36px;
+	top: 264px;
+
+}
+
+#zipcode {
+	width: 315px;
+	height: 34px;
+	left: 36px;
+	top: 264px;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	border-color: white
+}
+
+#pet-type {
+	width: 315px;
+	height: 34px;
+	left: 36px;
+	top: 264px;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	border-color: white
+}
+
+}
+
+#sex-m-f {
+	display:inline-block;
+	padding-left: 10px;
+
+}
+
+#submit-search {
+	display: block;
+	text-align: center;
+	margin: auto;
+	width: 100px;
+	height: 34px;
+	left: 36px;
+	top: 264px;
+	margin-top:10px;
+	border-radius: 10px;
+	border-color: white
+	text-transform: uppercase;
+}
+}
+
+.app-info {
+	margin:20px;
+}
+footer {
+	margin: 250px;
+}
 main {
-  margin-top: 60px;
+  margin-top: 200px;
+  text-align: center;
 }
 
-.pet {
-  border: 1px solid gray;
+.pet:hover {
+  border: 1px solid white;
+  background-color: #c0d0ea;
+  width:100%;
 }
+
