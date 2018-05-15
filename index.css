@@ -96,9 +96,25 @@ main {
   text-align: center;
 }
 
+button {
+	display:block;
+	text-align: center;
+	margin: auto;
+	width: 100px;
+	height: 34px;
+	left: 36px;
+	top: 264px;
+	margin-top:10px;
+	border-radius: 10px;
+	border-color: white
+}
+
 .pet:hover {
   border: 1px solid white;
   background-color: #c0d0ea;
   width:100%;
+}
+
+.animal-image {
 }
 
