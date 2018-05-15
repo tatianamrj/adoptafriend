@@ -64,6 +64,10 @@ body {
 
 }
 
+label {
+  margin-right: -5%;
+}
+
 #sex-m-f {
 	display:inline-block;
 	padding-left: 10px;
@@ -142,7 +146,7 @@ button {
   }
 
   .col-4 {
-  	width: 33%;
+  	width: 25%;
   }
 
   .col-12 {
