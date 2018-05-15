@@ -33,11 +33,18 @@ body {
 	display: block;
 	text-align: center;
 	margin: auto;
-	width: 315px;
 	height: 34px;
 	left: 36px;
 	top: 264px;
 
+}
+
+#pet-form {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
 #zipcode {
@@ -90,7 +97,7 @@ label {
 }
 
 .app-info {
-	margin:20px;
+	margin-top:200px;
 }
 footer {
 	margin: 250px;
@@ -113,9 +120,16 @@ button {
 	border-color: white
 }
 
-.image-1 {
-	width:100%;
+.row {
+  display: flex;
+  flex-flow: row wrap;
 }
+
+.col-4 {
+  flex: 33.33%;
+  padding: 5px;
+}
+
 .pet:hover {
   border: 1px solid white;
   background-color: #c0d0ea;
