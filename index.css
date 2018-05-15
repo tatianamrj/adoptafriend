@@ -113,6 +113,9 @@ button {
 	border-color: white
 }
 
+.image-1 {
+	width:100%;
+}
 .pet:hover {
   border: 1px solid white;
   background-color: #c0d0ea;
