@@ -92,9 +92,16 @@ label {
 .app-info {
 	margin:20px;
 }
-footer {
-	margin: 250px;
+
+.row {
+	display: flex;
+	flex-direction: row;
 }
+
+
+/*footer {
+	margin: 250px;
+}*/
 main {
   margin-top: 200px;
   text-align: center;
@@ -113,18 +120,29 @@ button {
 	border-color: white
 }
 
-.pet:hover {
-  border: 1px solid white;
-  background-color: #c0d0ea;
-  width:100%;
+.pet {
+/*width: 346px;
+height: 53px;*/
+/*left: 17px;
+top: 122px;
+*/text-align: left;
+margin-left: 10px;
+padding-left: 10px;
+background: #FFFFFF;
+border: 1px solid #000000;
+color: black;
+box-sizing: border-box;
 }
 
+.pet-name:hover {
+	color:blue;
+}
 .animal-image {
 }
 
 /** Mobile Design */
 
-.col-3, .col-4, .col-12 {
+/*.col-3, .col-4, .col-12 {
   width:100%;
   padding-left: 1%;
   padding-right: 1%;
@@ -158,4 +176,4 @@ button {
   .row {
     width:100%;
   }
-}
+}*/
