@@ -110,10 +110,10 @@ function imageClick() {
     $("#restart-search").show();
     $(".pet-info").html(event.currentTarget.children);
     $(".pet-description").toggle("hidden");
-    $(".row").toggle("hidden");
-    $(".pet-info").append("<button><a href='${petUrl}'>ADOPT THIS PET</button><button><a href='index.html'>RESTART SEARCH</button>")
+    $(".row").hide();
+    $(".about-me").hide();
+    $(".pet-info").append("<button><a href='${petUrl}'>ADOPT THIS PET</button>")
   });
-
 }
 watchSubmit();
 imageClick();
