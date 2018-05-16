@@ -89,7 +89,7 @@ function showResults(pets) {
       <p class="pet-description hidden">
       Description: ${pet.description.$t}</p>
       <img src="${petImage}" class="animal-image">
-    </div>`;
+    </div><button><a href='index.html'>RESTART SEARCH</button>`;
   });
   console.log(petResults);
   
