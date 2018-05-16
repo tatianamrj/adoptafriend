@@ -142,9 +142,9 @@ label {
 }
 
 
-/*footer {
-	margin: 250px;
-}*/
+footer {
+	text-align: center
+}
 main {
   margin-top: 200px;
   text-align: center;
@@ -175,6 +175,7 @@ background: #FFFFFF;
 border: 1px solid #000000;
 color: black;
 box-sizing: border-box;
+margin-top: 150px;
 }
 
 .pet-name:hover {
