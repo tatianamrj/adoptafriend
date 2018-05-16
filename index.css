@@ -72,7 +72,6 @@ body {
 	text-align: center;
 	margin: auto;
 	width: 315px;
-	height: 34px;
 	left: 36px;
 	top: 264px;
 
@@ -105,10 +104,9 @@ body {
 	border-color: white
 }
 
-}
 
 label {
-  margin-right: -5%;
+  margin-right: 5%;
 }
 
 #sex-m-f {
@@ -141,9 +139,15 @@ label {
 	flex-direction: row;
 }
 
+.col-4 {
+	flex-grow: 1;
+}
+
 
 footer {
-	text-align: center
+	display: block;
+	text-align: center;
+	margin: auto;
 }
 main {
   margin-top: 200px;
