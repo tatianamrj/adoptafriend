@@ -173,6 +173,7 @@ height: 53px;*/
 /*left: 17px;
 top: 122px;
 */text-align: left;
+/*margin-top: 500px;*/
 margin-left: 10px;
 padding-left: 10px;
 background: #FFFFFF;
@@ -185,8 +186,20 @@ margin-top: 150px;
 .pet-name:hover {
 	color:blue;
 }
-.animal-image {
+
+.pet-info {
+	margin-top: 350px;
 }
+
+.about-me {
+	margin-top: 100px;
+}
+/*.pet-description {
+	margin-top: 100px;
+}*/
+/*.animal-name {
+	margin-top: 300px;
+}*/
 
 /** Mobile Design */
 
