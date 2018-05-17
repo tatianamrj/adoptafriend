@@ -137,10 +137,12 @@ label {
 .row {
 	display: flex;
 	flex-direction: row;
+
 }
 
 .col-4 {
 	flex-grow: 1;
+	font-size: 0;
 }
 
 
@@ -184,7 +186,14 @@ margin-top: 150px;
 }
 
 .pet-name:hover {
-	color:blue;
+	cursor: pointer;
+	color:#56CCF2;
+}
+
+.pet-box {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
 }
 
 .pet-info {
