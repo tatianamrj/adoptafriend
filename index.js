@@ -50,34 +50,6 @@ function watchSubmit() {
   });
 }
 
-//     $.ajax({
-//       dataType: "jsonp",
-//       url: petFinderApi,
-//       type: "get",
-//       data: {
-//         key: "d709360a7a61accf370002fcfd477c15",
-//         id: ${petId},
-//         format: "json"
-//       },
-//       success: function(data) {
-           // let petObjects = newPetObject {
-//         var animalType = ${pet.animal.$t},
-           // var animalName = ${pet.name.$t},
-           // var animalId = ${pet.id.$t},
-           // var state = ${pet.contact.state.$t},
-           // var city = ${pet.contact.city.$t},
-         // }
-
-//         showResults(data.petfinder.pets.pet)
-//       },
-//       error: function(error) {
-//         console.log(error);
-//       }
-//     });
-//     $("#zipcode").val("");
-//   });
-// }
-
 
 // function renderMap(){
 //   $.ajax({
@@ -108,10 +80,32 @@ function showResults(pets) {
       petImage = "https://d30y9cdsu7xlg0.cloudfront.net/png/1515817-200.png";
     }
     let petId = pet.id.$t;
-    let shelterId = pet.shelterId.$t;
-    // let shelterLocation = 
-    let petUrl = `https://www.petfinder.com/${pet.animal.$t}/${petId}/zipcode/${pet.shelterId.$t}`;
-    console.log(petUrl);
+    
+//     let shelterLocation = 
+
+//     $.ajax({
+//       dataType: "jsonp",
+//       url: petFinderApi,
+//       type: "get",
+//       data: {
+//         key: "d709360a7a61accf370002fcfd477c15",
+//         id: shelterId,
+//         format: "json"
+//       },
+//       success: function(data) {
+//           console.log(data);
+//          }
+
+//         showResults(data.petfinder)
+//       },
+//       error: function(error) {
+//         console.log(error);
+//       }
+// }
+//     let shelterId = pet.shelterId.$t;
+//     let petUrl = `https://www.petfinder.com/${pet.animal.$t}/${petId}/zipcode/${pet.shelterId.$t}`;
+//     console.log(petUrl);
+
     return `
     <div class="pet">
       <div class"pet-box">
