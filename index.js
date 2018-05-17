@@ -81,13 +81,12 @@ function showResults(pets) {
     }
     let petId = pet.id.$t;
     
-//     let shelterLocation = 
-
-//     $.ajax({
-//       dataType: "jsonp",
-//       url: petFinderApi,
-//       type: "get",
-//       data: {
+//  let shelterLocation = 
+//       $.ajax({
+//         dataType: "jsonp",
+//         url: petFinderApi,
+//         type: "get",
+//         data: {
 //         key: "d709360a7a61accf370002fcfd477c15",
 //         id: shelterId,
 //         format: "json"
@@ -100,7 +99,7 @@ function showResults(pets) {
 //       },
 //       error: function(error) {
 //         console.log(error);
-//       }
+//       }}
 // }
 //     let shelterId = pet.shelterId.$t;
 //     let petUrl = `https://www.petfinder.com/${pet.animal.$t}/${petId}/zipcode/${pet.shelterId.$t}`;
