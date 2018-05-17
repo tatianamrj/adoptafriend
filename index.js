@@ -121,6 +121,7 @@ function showResults(pets) {
   
   $("#results").html(petResults);
   $(".row").hide();
+  $(".about-me").toggle("hidden");
   $("#restart-search").show();
 
 }
@@ -140,6 +141,7 @@ function imageClick() {
     $(".about-me").hide();
     $(".pet-info").append("<button><a href='${petUrl}'>ADOPT THIS PET</button>")
   });
+
 }
 watchSubmit();
 imageClick();
