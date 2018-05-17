@@ -212,9 +212,11 @@ margin-top: 10px;
 }
 
 .animal-image {
-	width:50%;
+	/*position: relative;*/
+	width:75%;
 	padding-left:10px;
 	padding-right: 10px;
+
 
 }
 
