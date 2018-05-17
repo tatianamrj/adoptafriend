@@ -75,7 +75,7 @@ function showResults(pets) {
   let petResults = pets.map(function(pet) {
     let petImage = null;
     if (pet.media.photos) {
-      petImage = pet.media.photos.photo["0"].$t;
+      petImage = pet.media.photos.photo["3"].$t;
     } else {
       petImage = "https://d30y9cdsu7xlg0.cloudfront.net/png/1515817-200.png";
     }

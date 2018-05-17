@@ -206,7 +206,10 @@ margin-top: 10px;
 	color:#56CCF2;
 }
 
-.pet-box {
+.animal-image {
+	/*width:100%;*/
+	padding-left:10px;
+	padding-right: 10px;
 
 }
 
