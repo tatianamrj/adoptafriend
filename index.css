@@ -183,6 +183,7 @@ button {
 	flex-wrap: wrap;
 	justify-content: center;
 	margin-top: 150px;
+
 }
 
 .pet {
@@ -206,12 +207,21 @@ margin-top: 10px;
 	color:#56CCF2;
 }
 
+.pet-box {
+
+}
+
 .animal-image {
-	/*width:100%;*/
+	width:50%;
 	padding-left:10px;
 	padding-right: 10px;
 
 }
+
+.animal-closeup {
+	width: 50%;
+}
+
 
 .pet-info {
 	margin-top: 350px;

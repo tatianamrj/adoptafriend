@@ -134,6 +134,7 @@ function imageClick() {
     $("#results-page").hide();
     $("#single-pet-page").show();
     $("#restart-search").show();
+    $(".animal-image").toggleClass("animal-closeup");
     $(".pet-info").html(event.currentTarget.children);
     $(".pet-description").toggle("hidden");
     $(".row").hide();
