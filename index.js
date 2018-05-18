@@ -128,11 +128,11 @@ function showResults(pets) {
 
 }
 
-function backButton() {
-  $("#back-button").on('click', event => {
-    alert("hi");
-  })
-}
+// function backButton() {
+//   $("#back-button").on('click', event => {
+//     alert("hi");
+//   )}
+// }
 
 // user clicks on image to get more information and map with pet location
 
