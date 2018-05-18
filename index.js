@@ -106,7 +106,7 @@ function imageClick() {
     $(".pet-description").toggle("hidden");
     $(".row").hide();
     $(".about-me").hide();
-    $(".pet-info").append("<button><a href='${petUrl}'>ADOPT THIS PET</button><button id='back-button'>Go Back</button>")
+    $(".pet-info").append("<button><a href='${adoptAFriendUrl}'>ADOPT THIS PET</button><button id='back-button'>Go Back</button>")
     console.log($("#shelter").text());
 
       $.ajax({
@@ -120,14 +120,14 @@ function imageClick() {
       },
       success: function(data) {
           console.log(data);
-        // showResults(data.shelterPetFinderApi)
+        console.log(data.petfinder.shelter);
       },
       error: function(error) {
         console.log(error);
       }
 });
-    let adoptAFriendUrl = `https://www.petfinder.com/${pet.animal.$t}/${pet.name.$t}-STATE/CITY/SHELTERNAME-SHELTERID${petId}/zipcode/${pet.shelterId.$t}`;
-    console.log();  
+    let adoptAFriendUrl = toLowerCase("https://www.petfinder.com/${pet.animal.$t}/${pet.name.$t}-${shelter.state.$t}/${shelter.city.$t}/${shelter.name.$t}-${shelter.id.$t}/");
+    console.log(adoptAFriendUrl);  
   });
 
 

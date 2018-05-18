@@ -15,7 +15,7 @@
   color:#56CCF2;
   background-color: white;
   padding: 10px;
-  margin-bottom: 100px;
+  margin-bottom: 0px;
   text-align:center;
      animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
@@ -79,7 +79,7 @@ body {
 }
 
 #pet-form {
-	margin-top: 300px;
+	margin-top: 20px;
 }
 
 #zipcode {
@@ -182,7 +182,7 @@ button {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-top: 150px;
+	margin-top: 50px;
 
 }
 
@@ -208,16 +208,11 @@ margin-top: 10px;
 	color:#56CCF2;
 }
 
-.pet-box {
-
-}
-
 .animal-image {
 	/*position: relative;*/
 	width:75%;
 	padding-left:10px;
 	padding-right: 10px;
-
 
 }
 
@@ -225,9 +220,14 @@ margin-top: 10px;
 	width: 40%;
 }
 
+.pet-description {
+	margin-right: 200px;
+	margin-left: 200px;
+}
+
 
 .pet-info {
-	margin-top: 350px;
+	margin-top: 300px;
 }
 
 .about-me {
