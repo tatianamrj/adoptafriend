@@ -2,9 +2,7 @@
 
 let petFinderApi = "https://api.petfinder.com/pet.find";
 
-// Google Maps API where locations are gathered into
-
-// let googleMapApi = "https://maps.googleapis.com/maps/api/js"
+let shelterPetFinderApi = "https://api.petfinder.com/shelter.get";
 
 // Load search function
 
@@ -51,22 +49,6 @@ function watchSubmit() {
 }
 
 
-// function renderMap(){
-//   $.ajax({
-//     dataType: "jsonp",
-//     url: googleMapApi,
-//     type: "get",
-//     data:{
-//       key: "AIzaSyAiv1XZ04K1PfWYP_YBL07cYVHdy1mW53M",
-//       q:
-//       origin: 
-//       format: "json"
-//     }
-//   })
-// }
-
-
-
 // petresults page loads
 function showResults(pets) {
   $("#home-page").hide();
@@ -80,30 +62,6 @@ function showResults(pets) {
       petImage = "https://d30y9cdsu7xlg0.cloudfront.net/png/1515817-200.png";
     }
     let petId = pet.id.$t;
-    
-//  let shelterLocation = 
-//       $.ajax({
-//         dataType: "jsonp",
-//         url: petFinderApi,
-//         type: "get",
-//         data: {
-//         key: "d709360a7a61accf370002fcfd477c15",
-//         id: shelterId,
-//         format: "json"
-//       },
-//       success: function(data) {
-//           console.log(data);
-//          }
-
-//         showResults(data.petfinder)
-//       },
-//       error: function(error) {
-//         console.log(error);
-//       }}
-// }
-//     let shelterId = pet.shelterId.$t;
-//     let petUrl = `https://www.petfinder.com/${pet.animal.$t}/${petId}/zipcode/${pet.shelterId.$t}`;
-//     console.log(petUrl);
 
     return `
     <div class="pet">
@@ -115,7 +73,7 @@ function showResults(pets) {
         <p class="animal-sex">Sex: ${pet.sex.$t}</p>
         <p class="pet-description hidden">
         Description: ${pet.description.$t}</p>
-        <button id="back-button">Go Back</button>
+        <p id="shelter" class="hidden">${pet.shelterId.$t}</p>
       </div>
   </div>`
   });
@@ -148,8 +106,30 @@ function imageClick() {
     $(".pet-description").toggle("hidden");
     $(".row").hide();
     $(".about-me").hide();
-    $(".pet-info").append("<button><a href='${petUrl}'>ADOPT THIS PET</button>")
+    $(".pet-info").append("<button><a href='${petUrl}'>ADOPT THIS PET</button><button id='back-button'>Go Back</button>")
+    console.log($("#shelter").text());
+
+      $.ajax({
+        dataType: "jsonp",
+        url: shelterPetFinderApi,
+        type: "get",
+        data: {
+        key: "d709360a7a61accf370002fcfd477c15",
+        id: $("#shelter").text(),
+        format: "json"
+      },
+      success: function(data) {
+          console.log(data);
+        // showResults(data.shelterPetFinderApi)
+      },
+      error: function(error) {
+        console.log(error);
+      }
+});
+    let adoptAFriendUrl = `https://www.petfinder.com/${pet.animal.$t}/${pet.name.$t}-STATE/CITY/SHELTERNAME-SHELTERID${petId}/zipcode/${pet.shelterId.$t}`;
+    console.log();  
   });
+
 
 }
 watchSubmit();
