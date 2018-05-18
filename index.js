@@ -7,9 +7,10 @@ let shelterPetFinderApi = "https://api.petfinder.com/shelter.get";
 // Load search function
 
 function loadSearch() {
-const homePage = `<div id="home-page" class="col-3"><title>Home</title><form id="pet-form"><label for="zipcode"></label><input id="zipcode" placeholder="ZipCode"><label for="pet-type"></label><select id="pet-type"><option value="">Select Animal</option><option value="barnyard">Barnyard Animal</option><option value="bird">Bird</option><option value="cat">Cat</option><option value="dog">Dog</option><option value="horse">Horse</option><option value="Reptile">Reptile</option><option value="smallfurry">Small and Furry</option></select><label for="sex"><input type="radio" name="sex" value="M" id= "sex-m-f"><label for="male">Male</label><input type="radio" name="sex" value="F"><label for="female">Female</label><input type="submit" value="SUBMIT" id="submit-search"></form><p class="app-info"> Adopt a Friend is an app to help you find adoptable pets near your location.<br><br> Enter your zipcode and make a selection to find your new friend.</p> </div><div id="results-page" class="hidden"><section> <h2>Results</h2></section><div id="results"></div> </div><div id="single-pet-page" class="hidden"><p class="pet-info"></p><div id="large-image"></div><div id="map"></div></div><footer id="restart"><div class="row"><div class="col-4"> <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/464184-200.png" alt-text="paw and dog bone"></div><div class="col-4"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/582073-200.png" alt-text="right pointing arrow"></div><div class="col-4"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/3966-200.png" alt-text="house-image"></div></div><footer><p class="about-me">About me: My name is Tatiana M.R. Johnson and I am a student in Thinkful's Full Stack Web Development program. <br>I am new to programming, but I love storytelling and I am excited to learn how I can use programming to tell compelling stories.</p></footer>`;
+const homePage = `<div id="home-page" class="col-3"><title>Home</title><form id="pet-form"><label for="zipcode"></label><input id="zipcode" placeholder="ZipCode"><label for="pet-type"></label><select id="pet-type"><option value="">Select Animal (Optional) </option><option value="barnyard">Barnyard Animal</option><option value="bird">Bird</option><option value="cat">Cat</option><option value="dog">Dog</option><option value="horse">Horse</option><option value="Reptile">Reptile</option><option value="smallfurry">Small and Furry</option></select><label for="sex"><input type="radio" name="sex" value="M" id= "sex-m-f"><label for="male">Male</label><input type="radio" name="sex" value="F"><label for="female">Female</label><input type="submit" value="SUBMIT" id="submit-search"></form><p class="app-info"> Adopt a Friend is an app to help you find adoptable pets near your location.<br><br> Enter your zipcode and make a selection to find your new friend.</p> </div><div id="results-page" class="hidden"><section> <h2>Results</h2></section><div id="results"></div> </div><div id="single-pet-page" class="hidden"><p class="pet-info"></p><div id="large-image"></div><div id="map"></div></div><footer id="restart"><div class="row"><div class="col-4"> <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/464184-200.png" alt-text="paw and dog bone"></div><div class="col-4"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/582073-200.png" alt-text="right pointing arrow"></div><div class="col-4"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/3966-200.png" alt-text="house-image"></div></div><footer><p class="about-me">About me: My name is Tatiana M.R. Johnson and I am a student in Thinkful's Full Stack Web Development program. <br>I am new to programming, but I love storytelling and I am excited to learn how I can use programming to tell compelling stories.</p></footer>`;
 $("main").html(homePage);
 $("#restart-search").hide();
+$("#next-button").hide();
 }
 
 loadSearch();
@@ -43,8 +44,10 @@ function watchSubmit() {
         console.log(error);
       }
     });
-    // clear out the input
+    // clearing out the input
     $("#zipcode").val("");
+    $("#pet-type").val("");
+    $("input[name=sex]:checked").val("");
   });
 }
 
@@ -53,6 +56,7 @@ function watchSubmit() {
 function showResults(pets) {
   $("#home-page").hide();
   $("#results-page").show();
+  $("#next-button").show();
 
   let petResults = pets.map(function(pet) {
     let petImage = null;
@@ -86,11 +90,22 @@ function showResults(pets) {
 
 }
 
-// function backButton() {
-//   $("#back-button").on('click', event => {
-//     alert("hi");
-//   )}
-// }
+// function for user to go back to their search results
+
+function backButton() {
+  $("#back-button").on('click', event => {
+    event.preventDefault();
+    $("results-page").show();
+  })
+}
+
+function nextButton() {
+  $("#back-button").on('click', event => {
+    event.preventDefault();
+    $("results-page").show().offset;
+  })
+}
+
 
 // user clicks on image to get more information and map with pet location
 
@@ -106,9 +121,11 @@ function imageClick() {
     $(".pet-description").toggle("hidden");
     $(".row").hide();
     $(".about-me").hide();
-    $(".pet-info").append("<button><a href='${adoptAFriendUrl}'>ADOPT THIS PET</button><button id='back-button'>Go Back</button>")
+    $("#next-button").hide();
+    $(".pet-info").append("<a href='${adoptAFriendUrl}'><button class='adopt-pet'>ADOPT THIS PET</button></a><a href='${backButton}'><button id='back-button'>GO BACK</button></a>")
     console.log($("#shelter").text());
 
+// second ajax call for shelter and location formmated in json
       $.ajax({
         dataType: "jsonp",
         url: shelterPetFinderApi,
@@ -126,11 +143,13 @@ function imageClick() {
         console.log(error);
       }
 });
-    let adoptAFriendUrl = toLowerCase("https://www.petfinder.com/${pet.animal.$t}/${pet.name.$t}-${shelter.state.$t}/${shelter.city.$t}/${shelter.name.$t}-${shelter.id.$t}/");
+    let adoptAFriendUrl = "https://www.petfinder.com/${pet.animal.$t}/${pet.name.$t}-${shelter.state.$t}/${shelter.city.$t}/${shelter.name.$t}-${shelter.id.$t}/".toLowerCase();
     console.log(adoptAFriendUrl);  
   });
 
 
 }
 watchSubmit();
+backButton();
+nextButton();
 imageClick();
