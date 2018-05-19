@@ -70,7 +70,7 @@ function showResults(pets) {
     return `
     <div class="pet">
       <div class"pet-box">
-        <h1 class="pet-name">${pet.name.$t}</h1>
+        <h1 class="pet-name" data-petId="${petId}">${pet.name.$t}</h1>
         <img src="${petImage}" class="animal-image">
         <p class="animal-type">Type of Animal: ${pet.animal.$t}</p>
         <p class="animal-name">Age: ${pet.age.$t}</p>
@@ -102,7 +102,7 @@ function backButton() {
 function nextButton() {
   $("#back-button").on('click', event => {
     event.preventDefault();
-    $("results-page").show().offset;
+    $("results-page").show();
   })
 }
 
@@ -122,7 +122,7 @@ function imageClick() {
     $(".row").hide();
     $(".about-me").hide();
     $("#next-button").hide();
-    $(".pet-info").append("<a href='${adoptAFriendUrl}'><button class='adopt-pet'>ADOPT THIS PET</button></a><a href='${backButton}'><button id='back-button'>GO BACK</button></a>")
+   
     console.log($("#shelter").text());
 
 // second ajax call for shelter and location formmated in json
@@ -138,13 +138,16 @@ function imageClick() {
       success: function(data) {
           console.log(data);
         console.log(data.petfinder.shelter);
+         let adoptAFriendUrl = `https://www.petfinder.com/${$('p.animal-type').text().split(" ").pop()}/${$('#single-pet-page h1.pet-name').text()}-${$('#single-pet-page h1.pet-name').attr("data-petId")}/${data.petfinder.shelter.state.$t}/${data.petfinder.shelter.city.$t}/${data.petfinder.shelter.name.$t}-${data.petfinder.shelter.id.$t}/`;
+          adoptAFriendUrl=adoptAFriendUrl.toLowerCase().replace(/ /g,"-");
+          console.log(adoptAFriendUrl);  
+         $(".pet-info").append(`<a href='${adoptAFriendUrl}'><button class='adopt-pet'>ADOPT THIS PET</button></a><a href='${backButton}'><button id='back-button'>GO BACK</button></a>`)
       },
       error: function(error) {
         console.log(error);
       }
 });
-    let adoptAFriendUrl = "https://www.petfinder.com/${pet.animal.$t}/${pet.name.$t}-${shelter.state.$t}/${shelter.city.$t}/${shelter.name.$t}-${shelter.id.$t}/".toLowerCase();
-    console.log(adoptAFriendUrl);  
+   
   });
 
 
