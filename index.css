@@ -228,6 +228,13 @@ margin-top: 10px;
 
 .pet-info {
 	margin-top: 300px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	color: black;
+	background-color: #F0F0F0;
+	box-sizing: border-box;
+	margin-left: 75px;
+	margin-right: 75px;
 }
 
 .adopt-pet {
