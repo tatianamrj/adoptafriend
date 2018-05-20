@@ -12,7 +12,7 @@
   right: 0;
   left: 0;
   width: 100%;
-  color:#56CCF2;
+  color:##050709;
   background-color: white;
   padding: 10px;
   margin-bottom: 0px;
@@ -65,7 +65,7 @@ body {
   font-family: Raleway , sans-serif;
   margin: auto;
   background: #56CCF2;
-  color: #FFFFFF;
+  color: #050709;
 }
 
 #home-page {
@@ -175,7 +175,7 @@ button {
 	border-radius: 10px;
 	border-color: white
 	cursor: pointer;
-	color:#56CCF2;
+	color:#050709;
 	margin-bottom: 30px;
 }
 
@@ -205,7 +205,7 @@ margin-top: 10px;
 
 .pet-name:hover {
 	cursor: pointer;
-	color:#44a3c1;
+	color:#56CCF2;
 }
 
 .animal-image {
