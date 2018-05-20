@@ -4,21 +4,21 @@
 
 <br>
 <img src="https://raw.githubusercontent.com/tatianamrj/adoptafriend/master/adoptafriend/screensave%201.png">
-
+<br>
 <p>A user enters their zipcode and has the option of selecting a pet and animal sex.</p>
-
+<br>
 <img src="https://raw.githubusercontent.com/tatianamrj/adoptafriend/master/adoptafriend/screensave%202.png">
-
+<br>
 <p>The user is presented with adoptable pets in their area. The user can select more results to see even more pets.</p>
-
+<br>
 <img src="https://raw.githubusercontent.com/tatianamrj/adoptafriend/master/adoptafriend/screensave%203.png">
-
+<br>
 <p>The user can select a pet and learn more about them.</p>
-
+<br>
 <img src="https://raw.githubusercontent.com/tatianamrj/adoptafriend/master/adoptafriend/screensave%204.png">
-
+<br>
 <p>Then the user can select "adopt this pet" to find out how to adopt that particular pet.</p>
-
+<br>
 <img src="https://raw.githubusercontent.com/tatianamrj/adoptafriend/master/adoptafriend/screensave%205.png">
 
 
