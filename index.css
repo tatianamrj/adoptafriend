@@ -142,13 +142,13 @@ label {
 
 }
 
-.col-4 {
+.image-row {
 	font-size: 0;
 	padding-left: 5px;
 	padding-right: 5px;
 }
 
-.col-4 img {
+.image-row img {
 	width: 100%;
 }
 
