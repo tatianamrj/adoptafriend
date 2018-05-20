@@ -1,6 +1,7 @@
 <h1>Adopt a Friend</h1>
 <p>Adopt a Friend is an app built using the Pet Finder API meant to help users connect with adoptable pets near their location.</p>
-<a href="">LIVE DEMO</a>
+<a href="https://tatianamrj.github.io/adoptafriend/">LIVE DEMO</a>
+***
 <br>
 <img src="https://raw.githubusercontent.com/tatianamrj/adoptafriend/master/adoptafriend/screensave%201.png">
 <p>A user enters their zipcode and has the option of selecting a pet and animal sex.</p>
@@ -11,6 +12,7 @@
 <img src="https://raw.githubusercontent.com/tatianamrj/adoptafriend/master/adoptafriend/screensave%204.png">
 <p>Then the user can select "adopt this pet" to find out how to adopt that particular pet.</p>
 <img src="https://raw.githubusercontent.com/tatianamrj/adoptafriend/master/adoptafriend/screensave%205.png">
+***
 <h1>Languages used:</h1>
 <ul>
 	<li> HTML</li>
