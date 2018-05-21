@@ -24,7 +24,8 @@ function watchSubmit() {
     let zipcode = $("#zipcode").val();
     let petType = $("#pet-type").val();
     let sex = $("input[name=sex]:checked").val();
-    
+
+    // users sessions are stored
 
     if (typeof (Storage) !== "undefined") {
       // Code for sessionStorage.
@@ -50,7 +51,13 @@ function watchSubmit() {
       },
       success: function(data) {
         console.log(data);
-        showResults(data.petfinder.pets.pet);
+        if(data.petfinder.pets.pet){
+          showResults(data.petfinder.pets.pet);
+        }
+          else {
+
+            $("#results-page").text('There were no results found. Broaden your search or check back soon.');
+          }
       },
       error: function(error) {
         console.log(error);
@@ -108,11 +115,39 @@ function showResults(pets) {
 
 function backButton() {
   $("#back-button").on('click', event => {
-    event.preventDefault();
-    $("#results-page").show();
-    $("#single-pet-page").hide();
-    $("#next-button").show();
-    // $(".pet-description").hide();
+     event.preventDefault();
+    
+    if(sessionStorage.sex == "undefined") {
+      sessionStorage.sex = "";
+    }
+      
+    $.ajax({
+      dataType: "jsonp",
+      url: petFinderApi,
+      type: "get",
+      data: {
+        key: "d709360a7a61accf370002fcfd477c15",
+        location: sessionStorage.zipcode,
+        animal: sessionStorage.petType,
+        sex: sessionStorage.sex,
+        // offset: '25',
+        format: "json"
+      },
+      success: function (data) {
+        console.log(data);
+                $("#single-pet-page").hide();
+                $(".about-me").hide();
+                if(data.petfinder.pets.pet) {
+          showResults(data.petfinder.pets.pet);
+                }
+              else {
+                $("#results-page").text('There were no results found. Broaden your search or check back soon.');
+              }
+      },
+      error: function (error) {
+        console.log(error);
+      }
+    })
   })
   
 }
@@ -140,11 +175,12 @@ function nextButton() {
       },
       success: function (data) {
         console.log(data);
+                $(".about-me").hide();
                 if(data.petfinder.pets.pet) {
           showResults(data.petfinder.pets.pet);
                 }
               else {
-                console.log('There were no results found. Broaden your search or check back soon.');
+                $("#results-page").text('There were no results found. Broaden your search or check back soon.');
               }
       },
       error: function (error) {
