@@ -24,6 +24,17 @@ function watchSubmit() {
     let zipcode = $("#zipcode").val();
     let petType = $("#pet-type").val();
     let sex = $("input[name=sex]:checked").val();
+    
+
+    if (typeof (Storage) !== "undefined") {
+      // Code for sessionStorage.
+      sessionStorage.zipcode = zipcode;
+      sessionStorage.petType = petType;
+      sessionStorage.sex = sex;
+    } else {
+      // Sorry! No Web Storage support..
+    }
+
 
 // first ajax call for location, animal and sex formmated in json
     $.ajax({
@@ -108,10 +119,38 @@ function backButton() {
 
 // function for user to see more search results
 function nextButton() {
-  $("next-button").on('click', event => {
+  $("#next-button").on('click', event => {
     event.preventDefault();
-    // $("#results-page").show();
-    $("#results-page").offset();
+    
+    if(sessionStorage.sex == "undefined") {
+      sessionStorage.sex = "";
+    }
+      
+    $.ajax({
+      dataType: "jsonp",
+      url: petFinderApi,
+      type: "get",
+      data: {
+        key: "d709360a7a61accf370002fcfd477c15",
+        location: sessionStorage.zipcode,
+        animal: sessionStorage.petType,
+        sex: sessionStorage.sex,
+        offset: '25',
+        format: "json"
+      },
+      success: function (data) {
+        console.log(data);
+                if(data.petfinder.pets.pet) {
+          showResults(data.petfinder.pets.pet);
+                }
+              else {
+                console.log('There were no results found. Broaden your search or check back soon.');
+              }
+      },
+      error: function (error) {
+        console.log(error);
+      }
+    })
   })
 }
 
